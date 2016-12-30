@@ -92,13 +92,13 @@ int main(void)
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
-		lcd_put_string(1, 3, st1);
+		lcd_put_string(1, 0, st1);
 		delay(5);
-		lcd_put_string(2, 10, st2);
+		lcd_put_string(2, 0, st2);
 		delay(5);
-		lcd_put_string(3, 12, st3);
+		lcd_put_string(3, 0, st3);
 		delay(5);
-		lcd_put_string(4, 13, st4);
+		lcd_put_string(4, 0, st4);
 		delay(5);
   }
   /* USER CODE END 3 */

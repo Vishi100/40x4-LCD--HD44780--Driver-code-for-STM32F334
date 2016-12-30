@@ -64,10 +64,10 @@ int main(void)
 
   /* USER CODE BEGIN 1 */
 //	unsigned int count=0;
-	uint8_t st1[]="ThinkCircuit Technologies Pvt. Ltd.";
-	uint8_t st2[]="Chandra Layout";
-	uint8_t st3[]="Vijayanagar";
-	uint8_t st4[]="Bengaluru";
+	uint8_t st1[]="Hello";
+	uint8_t st2[]="World";
+	uint8_t st3[]="This is a 40x4 LCD";
+	uint8_t st4[]="STM32F334 Microcontroller";
   /* USER CODE END 1 */
 
   /* MCU Configuration----------------------------------------------------------*/

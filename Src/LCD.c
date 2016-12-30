@@ -5,7 +5,7 @@
 			 equivalent). It consists of two controllers, one each 
 			 for the upper and lower displays with each of them 
 			 having 40x2 capacity. The two controllers share the 
-			 ins and can be controlled by the separate enable pins 
+			 pins and can be controlled by the separate enable pins 
 			 povided.
   ******************************************************************************
   */

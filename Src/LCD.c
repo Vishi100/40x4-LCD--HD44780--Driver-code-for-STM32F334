@@ -2,11 +2,11 @@
   ******************************************************************************
   * File Name          : LCD.c
   * Description        : Driver code for 40x4 Character LCD LM40400 (HD44780 
-												 equivalent). It consists of two controllers, one each 
-												 for the upper and lower displays with each of them 
-												 having 40x2 capacity. The two controllers share the 
-												 pins and can be controlled by the separate enable pins 
-												 provided.
+			 equivalent). It consists of two controllers, one each 
+			 for the upper and lower displays with each of them 
+			 having 40x2 capacity. The two controllers share the 
+			 ins and can be controlled by the separate enable pins 
+			 povided.
   ******************************************************************************
   */
 
@@ -28,11 +28,11 @@ void delay(unsigned int time)  //Time delay function
 }
 
 /**
-  * @brief  Function to toggle enable pin of upper controller. This should be
-						called from lcdcmd or lcddata functions.
-  * @param  type parameter (type_t enum variable) can be any one among the two - 
-						CMD or DATA.
-  * @retval None
+  * @brief  	Function to toggle enable pin of upper controller. This should be
+		called from lcdcmd or lcddata functions.
+  * @param 	 type parameter (type_t enum variable) can be any one among the two - 
+		CMD or DATA.
+  * @retval 	None
   */
 void toggle_EN1(type_t type)
 {
@@ -50,11 +50,11 @@ void toggle_EN1(type_t type)
 }
 
 /**
-  * @brief  Function to toggle enable pin of lower controller. This should be
-						called from lcdcmd or lcddata functions.
-  * @param  type parameter (type_t enum variable) can be any one among the two - 
-						CMD or DATA.
-  * @retval None
+  * @brief 	 Function to toggle enable pin of lower controller. This should be
+		called from lcdcmd or lcddata functions.
+  * @param  	type parameter (type_t enum variable) can be any one among the two - 
+		CMD or DATA.
+  * @retval 	None
   */
 void toggle_EN2(type_t type)
 {
@@ -72,10 +72,10 @@ void toggle_EN2(type_t type)
 }
 
 /**
-  * @brief  Function to send data bits (8-bit mode) to the respective pins. This 
-						should be called from lcdcmd or lcddata functions.
-  * @param  data - 8 bit data.
-  * @retval None
+  * @brief  	Function to send data bits (8-bit mode) to the respective pins. This 
+		should be called from lcdcmd or lcddata functions.
+  * @param  	data - 8 bit data.
+  * @retval 	None
   */
 void lcd_write(uint8_t data)
 {
@@ -147,13 +147,13 @@ void lcd_write(uint8_t data)
 }
 
 /**
-  * @brief  Function for sending values to the command register of LCD. This 
-						can be called by the user to give instructions to the LCD.
-  * @param  display - display_t variable to indicate which controller should 
-						receive the command. It can be any one among the two - 
-						DISPLAY_1 or DISPLAY_2.
+  * @brief  	Function for sending values to the command register of LCD. This 
+		can be called by the user to give instructions to the LCD.
+  * @param  	display - display_t variable to indicate which controller should 
+		receive the command. It can be any one among the two - 
+		DISPLAY_1 or DISPLAY_2.
 	* @param  value - 8 bit command.
-  * @retval None
+  * @retval 	None
   */
 void lcdcmd(display_t display, uint8_t value)
 {
@@ -168,13 +168,13 @@ void lcdcmd(display_t display, uint8_t value)
 }
 
 /**
-  * @brief  Function for sending values to the data register of LCD. This 
-						can be called by the user to display characters on the LCD.
-  * @param  display - display_t variable to indicate which controller should 
-						receive the command. It can be any one among the two - 
-						DISPLAY_1 or DISPLAY_2.
-	* @param  value - 8 bit data.
-  * @retval None
+  * @brief  	Function for sending values to the data register of LCD. This 
+		can be called by the user to display characters on the LCD.
+  * @param 	display - display_t variable to indicate which controller should 
+		receive the command. It can be any one among the two - 
+		DISPLAY_1 or DISPLAY_2.
+* @param  	value - 8 bit data.
+  * @retval 	None
   */
 void lcddata(display_t display, uint8_t value)
 {
@@ -189,10 +189,10 @@ void lcddata(display_t display, uint8_t value)
 }
 
 /**
-  * @brief  Function to reset the pins used for the LCD. Control pins have
-						been taken on Port B and data pins on Port C.
-  * @param  None.
-  * @retval None
+  * @brief  	Function to reset the pins used for the LCD. Control pins have
+		been taken on Port B and data pins on Port C.
+  * @param  	None.
+  * @retval	None
   */
 void lcd_ports_clear(void)
 {
@@ -202,10 +202,10 @@ void lcd_ports_clear(void)
 }
 
 /**
-  * @brief  Function to initialize the registers and pins of LCD (upper display).
-						This shouldn't be called by the user as both the displays need to be
-						initialized and a separate function has been provided for 
-						initialization of the LCD.
+  * @brief 	Function to initialize the registers and pins of LCD (upper display).
+		This shouldn't be called by the user as both the displays need to be
+		initialized and a separate function has been provided for 
+		initialization of the LCD.
   * @param  None.
   * @retval None
   */
@@ -230,12 +230,12 @@ void lcdint1(void)
 }
 
 /**
-  * @brief  Function to initialize the registers and pins of LCD (lower display).
-						This shouldn't be called by the user as both the displays need to be
-						initialized and a separate function has been provided for 
-						initialization of the LCD.
-  * @param  None.
-  * @retval None
+  * @brief 	Function to initialize the registers and pins of LCD (lower display).
+		This shouldn't be called by the user as both the displays need to be
+		initialized and a separate function has been provided for 
+		initialization of the LCD.
+  * @param  	None.
+  * @retval 	None
   */
 void lcdint2(void)         
 {
@@ -270,14 +270,14 @@ void lcd_init(void)
 }
 
 /**
-  * @brief  Function to display string on LCD. Can be called by the user.
-  * @param  line_no - Specifies where the string should be displayed. Takes values 
-						from 1 to 4 for 40x4 LCD.
-	* @param  starting_column - Specifies where the string should be displayed. Takes 
-						values from 1 to 40 for 40x4 LCD.
-  * @param  S pointer to the unsigned char string to be displayed.
-  * @retval ERROR if line_no or starting_column is out of range.
-						SUCCESS if the string is displayed.
+  * @brief  	Function to display string on LCD. Can be called by the user.
+  * @param  	line_no - Specifies where the string should be displayed. Takes values 
+		from 1 to 4 for 40x4 LCD.
+* @param   	sarting_column - Specifies where the string should be displayed. Takes 
+		values from 1 to 40 for 40x4 LCD.
+  * @param  	S pointer to the unsigned char string to be displayed.
+  * @retval 	ERROR if line_no or starting_column is out of range.
+		SUCCESS if the string is displayed.
   */
 ErrorStatus lcd_put_string(uint8_t line_no, uint8_t starting_column, uint8_t *S)
 {
@@ -320,10 +320,10 @@ ErrorStatus lcd_put_string(uint8_t line_no, uint8_t starting_column, uint8_t *S)
 }
 
 /**
-  * @brief  Function to clear a single line on LCD. Can be called by the user.
-  * @param  line_no - Specifies which line has to be cleared. Takes values 
-						from 1 to 4 for 40x4 LCD.
-  * @retval None.
+  * @brief  	Function to clear a single line on LCD. Can be called by the user.
+  * @param  	line_no - Specifies which line has to be cleared. Takes values 
+		from 1 to 4 for 40x4 LCD.
+  * @retval 	None.
   */
 void clear_line(uint8_t line_no)
 {

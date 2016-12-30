@@ -18,6 +18,7 @@ STEPS: The complete preogramming has been done in GUI.
 
 3) The output is displayed on the LCD.
 
+
 LCD Pin Details:
 * 1 to 8 - DB7 to DB0
 * 9 - E1
@@ -30,3 +31,11 @@ LCD Pin Details:
 * 16 - NC
 * 17 - LCD Backlight Anode
 * 18 - LCD Backlight Cathode
+
+
+Pins used in the controller -
+* PB6 - R/W
+* PB7 - RS
+* PB8 - E1
+* PB9 - E2
+* PC0 to PC7 - DB0 to DB7

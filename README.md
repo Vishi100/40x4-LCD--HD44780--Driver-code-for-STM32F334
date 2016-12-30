@@ -17,3 +17,16 @@ STEPS: The complete preogramming has been done in GUI.
 2) The C source code has been given in the main.c file from the repository. Copy and build the code. Flash the hex file and you are all set!
 
 3) The output is displayed on the LCD.
+
+LCD Pin Details:
+* 1 to 8 - DB7 to DB0
+* 9 - E1
+* 10 - R/W
+* 11 - RS
+* 12 - V0
+* 13 - GND
+* 14 - VDD
+* 15 - E2
+* 16 - NC
+* 17 - LCD Backlight Anode
+* 18 - LCD Backlight Cathode

@@ -1,6 +1,19 @@
+/**
+  ******************************************************************************
+  * File Name          : LCD.h
+  * Description        : Header for driver code of 40x4 Character LCD LM40400 
+                         (HD44780 equivalent). It consists of two controllers, one 
+                         each for the upper and lower displays with each of them 
+			                   having 40x2 capacity. The two controllers share the 
+			                   pins and can be controlled by the separate enable pins 
+			                   povided.
+  ******************************************************************************
+  */
+
 #ifndef __LCD_H
 #define __LCD_H
 
+/* BEGIN Includes */
 #include "stm32f3xx_hal.h"
 
 /* Macros for LCD */
@@ -20,8 +33,9 @@ typedef enum {DISPLAY_1, DISPLAY_2} display_t; //to select upper or lower displa
 #define SET_LINE2(starting_column)							lcdcmd(DISPLAY_1, 0xC0 + (starting_column - 1));
 #define SET_LINE3(starting_column)							lcdcmd(DISPLAY_2, 0x80 + (starting_column - 1));
 #define SET_LINE4(starting_column)							lcdcmd(DISPLAY_2, 0xC0 + (starting_column - 1));
+/* END Includes */
 
-/* LCD functions prototypes */
+/* BEGIN Private function prototypes */
 void lcd_init(void);
 void delay(unsigned int time);
 void toggle_EN1(type_t type);
@@ -34,5 +48,7 @@ void lcdint1(void);
 void lcdint2(void);
 ErrorStatus lcd_put_string(unsigned char line, unsigned char starting_column, unsigned char *S);
 void clear_line(unsigned char line_no);
+/* END Private function prototypes */
 
 #endif
+/**********************************END OF FILE***********************************/

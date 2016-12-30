@@ -14,7 +14,7 @@ STEPS: The complete preogramming has been done in GUI.
 
 1) STM32CubeMX -> New Project In Board Selector tab, select Vendor(STMicroelectronics), Type of Board (Nucleo64) and MCU series(STM32F3). Next, select STM32F334R8Tx MCU from the board list. Clear the pinouts. Configure the GPIO pins as shown in the Cube file from the repository. Go to configuration tab. Now configure GPIO. Finally, click on 'Generate source code based on user settings'. Make the appropriate settings and select MDK-ARM V5 Toolchain. Open the Kiel project.
 
-2) The C source code has been given in the main.c file from the repository. Copy and build the code. Flash the hex file and you are all set!
+2) The C source code has been given in the main.c file & the LCD driver code in LCD.c from the repository. Copy and build the code. Flash the hex file and you are all set!
 
 3) The output is displayed on the LCD.
 

@@ -4,9 +4,9 @@
   * Description        : Header for driver code of 40x4 Character LCD LM40400 
                          (HD44780 equivalent). It consists of two controllers, one 
                          each for the upper and lower displays with each of them 
-			                   having 40x2 capacity. The two controllers share the 
-			                   pins and can be controlled by the separate enable pins 
-			                   povided.
+			 having 40x2 capacity. The two controllers share the 
+			 pins and can be controlled by the separate enable pins 
+			 povided.
   ******************************************************************************
   */
 

@@ -329,3 +329,5 @@ void clear_line(uint8_t line_no)
 {
 	lcd_put_string(line_no, 1, (uint8_t *)"                                        ");
 }
+
+/**********************************END OF FILE***********************************/

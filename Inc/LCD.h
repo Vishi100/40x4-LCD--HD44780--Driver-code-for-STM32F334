@@ -17,22 +17,22 @@
 #include "stm32f3xx_hal.h"
 
 /* Macros for LCD */
-#define RS_RESET							HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, GPIO_PIN_RESET);
-#define RS_SET								HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, GPIO_PIN_SET);
+#define RS_RESET				HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, GPIO_PIN_RESET);
+#define RS_SET					HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, GPIO_PIN_SET);
 #define RW_WRITE_RESET				HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_RESET);
-#define RW_WRITE_SET					HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_SET);
-#define EN1_ENABLE						HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, GPIO_PIN_SET);
-#define EN1_DISABLE						HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, GPIO_PIN_RESET);
-#define EN2_ENABLE						HAL_GPIO_WritePin(GPIOB, GPIO_PIN_9, GPIO_PIN_SET);
-#define EN2_DISABLE						HAL_GPIO_WritePin(GPIOB, GPIO_PIN_9, GPIO_PIN_RESET);								
+#define RW_WRITE_SET				HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_SET);
+#define EN1_ENABLE				HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, GPIO_PIN_SET);
+#define EN1_DISABLE				HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, GPIO_PIN_RESET);
+#define EN2_ENABLE				HAL_GPIO_WritePin(GPIOB, GPIO_PIN_9, GPIO_PIN_SET);
+#define EN2_DISABLE				HAL_GPIO_WritePin(GPIOB, GPIO_PIN_9, GPIO_PIN_RESET);								
 
 typedef enum {CMD, DATA} type_t; //for the function to toggle enable pins
 typedef enum {DISPLAY_1, DISPLAY_2} display_t; //to select upper or lower display
 
-#define SET_LINE1(starting_column)							lcdcmd(DISPLAY_1, 0x80 + (starting_column - 1));
-#define SET_LINE2(starting_column)							lcdcmd(DISPLAY_1, 0xC0 + (starting_column - 1));
-#define SET_LINE3(starting_column)							lcdcmd(DISPLAY_2, 0x80 + (starting_column - 1));
-#define SET_LINE4(starting_column)							lcdcmd(DISPLAY_2, 0xC0 + (starting_column - 1));
+#define SET_LINE1(starting_column)		lcdcmd(DISPLAY_1, 0x80 + (starting_column - 1));
+#define SET_LINE2(starting_column)		lcdcmd(DISPLAY_1, 0xC0 + (starting_column - 1));
+#define SET_LINE3(starting_column)		lcdcmd(DISPLAY_2, 0x80 + (starting_column - 1));
+#define SET_LINE4(starting_column)		lcdcmd(DISPLAY_2, 0xC0 + (starting_column - 1));
 /* END Includes */
 
 /* BEGIN Private function prototypes */
